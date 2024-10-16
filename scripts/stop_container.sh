@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 # Install Docker if it's not already installed
 if ! [ -x "$(command -v docker)" ]; then
@@ -7,7 +7,7 @@ if ! [ -x "$(command -v docker)" ]; then
 fi
 
 # Stop the running container (if any)
-containerid=$(docker ps | awk '{print $1}')
-docker rm -f $containerid
-
-
+container_id=$(docker ps -q)
+if [ -n "$container_id" ]; then
+  docker rm -f $container_id
+fi
