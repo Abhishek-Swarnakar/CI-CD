@@ -2,7 +2,7 @@
 
 # Install Docker if it's not already installed
 if ! [ -x "$(command -v docker)" ]; then
-  echo 'Error: Docker is not installed.' >&2
+  echo "Error: Docker is not installed." >&2
   exit 1
 fi
 
